@@ -6,6 +6,8 @@ import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +34,10 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
+		
+		//ApplicationContext appContext =(ApplicationContext) new ClassPathXmlApplicationContext("jee-beans.xml");
+		//Taches taches = (Taches) appContext.getBean("taches");
+		//model.addAttribute("taches", taches.getLibelle());
 		
 		return "home";
 	}
