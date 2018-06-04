@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="taches" class="com.esgi.jee_project.Taches">
+	<property name="libelle" value="Test"></property>
+	<property name="id_user" value="1"></property>
+	<property name="date" value="04-06-2018"></property>
+	<property name="urgent" value="1"></property>
+</bean>
+</beans>
