@@ -3,10 +3,16 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="taches" class="com.esgi.jee_project.Taches">
-	<property name="libelle" value="Test"></property>
-	<property name="id_user" value="1"></property>
-	<property name="date" value="04-06-2018"></property>
-	<property name="urgent" value="1"></property>
-</bean>
+	<bean id="datasource1" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="taches">
+			<list>
+			<value>classpath:/com/esgi/jee-project/database/db.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="tachesDao" class="com.esgi.jee_project.database.TachesDao">
+		<property name="dataSource" ref="datasource1"></property>
+	</bean>
+
 </beans>
