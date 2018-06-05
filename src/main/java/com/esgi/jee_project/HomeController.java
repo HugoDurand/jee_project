@@ -40,6 +40,10 @@ public class HomeController {
 		
 		model.addAttribute("taches", taches );
 		
+		//ApplicationContext appContext =(ApplicationContext) new ClassPathXmlApplicationContext("jee-beans.xml");
+		//Taches taches = (Taches) appContext.getBean("taches");
+		//model.addAttribute("taches", taches.getLibelle());
+		
 		return "home";
 	}
 	

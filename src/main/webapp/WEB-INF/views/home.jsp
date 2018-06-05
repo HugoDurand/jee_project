@@ -6,6 +6,9 @@
 </head>
 <body>
 
+
+<P>${taches.libelle}</P>
+
 ${taches.id}
 ${taches.libelle}
 ${taches.date}

@@ -5,10 +5,13 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
 
 <P>${taches}</P>
+
+${taches.id}
+${taches.libelle}
+${taches.date}
+${taches.urgent}
+
 </body>
 </html>

@@ -3,6 +3,10 @@ package com.esgi.jee_project.database;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+
+import javax.sql.DataSource;
+import com.esgi.jee_project.domaine.Taches;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -10,6 +14,7 @@ import javax.sql.DataSource;
 import com.esgi.jee_project.domaine.Taches;
 
 public class TachesDao{
+
 	
 	private DataSource dataSource;
 	
@@ -48,6 +53,7 @@ public class TachesDao{
 		
 	}
 	
+
 	public Taches findByTachesId(int id){
 		Connection conn = null;
 		PreparedStatement stmt = null;
@@ -83,6 +89,7 @@ public class TachesDao{
 		
 	}
 	
+
 	
 
 }
