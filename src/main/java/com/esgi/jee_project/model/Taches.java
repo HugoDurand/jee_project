@@ -9,16 +9,16 @@ import java.util.Date;
 public class Taches {
 	private int id;
 	private String libelle;
-	private int id_user;
-	private Date date;
+	private String user;
+	private String date;
 	private Boolean urgent;
 
 	public Taches() {
 	}
 
-	public Taches(String libelle, int id_user, Date date, Boolean urgent) {
+	public Taches(String libelle, String user, String date, Boolean urgent) {
 		this.libelle = libelle;
-		this.id_user = id_user;
+		this.user = user;
 		this.date = date;
 		this.urgent = urgent;
 	}
@@ -39,19 +39,19 @@ public class Taches {
 		this.libelle = libelle;
 	}
 
-	public int getId_user() {
-		return id_user;
+	public String getUser() {
+		return user;
 	}
 
-	public void setId_user(int id_user) {
-		this.id_user = id_user;
+	public void setUser(String user) {
+		this.user = user;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

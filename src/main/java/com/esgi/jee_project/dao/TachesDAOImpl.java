@@ -36,17 +36,17 @@ public class TachesDAOImpl implements TachesDAO {
 			/**
 			 * update
 			 */
-			String sql = "UPDATE taches SET libelle=?, id_user=?, date=?, urgent=?"
+			String sql = "UPDATE taches SET libelle=?, user=?, date=?, urgent=?"
 						+ " WHERE id=?";
-			jdbcTemplate.update(sql, taches.getLibelle(), taches.getId_user(),
+			jdbcTemplate.update(sql, taches.getLibelle(), taches.getUser(),
 					taches.getDate(), taches.getUrgent(), taches.getId());
 		} else {
 			/**
 			 * insert
 			 */
-			String sql = "INSERT INTO taches (libelle, id_user, date, urgent)"
+			String sql = "INSERT INTO taches (libelle, user, date, urgent)"
 						+ " VALUES (?, ?, ?, ?)";
-			jdbcTemplate.update(sql, taches.getLibelle(), taches.getId_user(),
+			jdbcTemplate.update(sql, taches.getLibelle(), taches.getUser(),
 					taches.getDate(), taches.getUrgent());
 		}
 		
@@ -68,7 +68,7 @@ public class TachesDAOImpl implements TachesDAO {
  */
 	@Override
 	public List<Taches> list() {
-		String sql = "SELECT * FROM taches ORDER BY urgent DESC, date DESC";
+		String sql = "SELECT * FROM taches ORDER BY date DESC";
 		List<Taches> listTaches = jdbcTemplate.query(sql, new RowMapper<Taches>() {
 
 			@Override
@@ -77,8 +77,8 @@ public class TachesDAOImpl implements TachesDAO {
 	
 				aTaches.setId(rs.getInt("id"));
 				aTaches.setLibelle(rs.getString("libelle"));
-				aTaches.setId_user(rs.getInt("id_user"));
-				aTaches.setDate(rs.getDate("date"));
+				aTaches.setUser(rs.getString("user"));
+				aTaches.setDate(rs.getString("date"));
 				aTaches.setUrgent(rs.getBoolean("urgent"));
 				
 				return aTaches;
@@ -105,8 +105,8 @@ public class TachesDAOImpl implements TachesDAO {
 					Taches taches = new Taches();
 					taches.setId(rs.getInt("id"));
 					taches.setLibelle(rs.getString("libelle"));
-					taches.setId_user(rs.getInt("id_user"));
-					taches.setDate(rs.getDate("date"));
+					taches.setUser(rs.getString("user"));
+					taches.setDate(rs.getString("date"));
 					taches.setUrgent(rs.getBoolean("urgent"));;
 					return taches;
 				}
