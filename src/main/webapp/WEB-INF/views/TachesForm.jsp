@@ -21,14 +21,14 @@
 		<form:hidden path="id"/>
 			<div class="form-group">
 				<label>Libelle:</label>
-				<form:input path="libelle" class="form-control" />
+				<form:input path="libelle" class="form-control" required="required"/>
 			</div>
 			<div class="form-group">
 				<label>Nom/Prénom user:</label>
-				<form:input path="user" class="form-control" />
+				<form:input path="user" class="form-control" required="required"/>
 			</div>
 				<label>date:</label>
-				<form:input path="date" class="form-control" />
+				<form:input path="date" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" class="form-control" required="required"/>(Ex: 2018-12-01)
 			<div class="form-group">
 				<label  style="color:red">Urgent:</label>
 				<form:checkbox path="urgent" class="form-control"/>
