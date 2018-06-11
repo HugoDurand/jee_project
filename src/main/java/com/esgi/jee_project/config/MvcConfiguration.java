@@ -16,7 +16,7 @@ import com.esgi.jee_project.dao.TachesDAO;
 import com.esgi.jee_project.dao.TachesDAOImpl;
 
 /**
- * Configuration Mvc de Spring avec définition des vues, ressources et données de connection
+ * Configuration Mvc de Spring avec dï¿½finition des vues, ressources et donnï¿½es de connection
  */
 
 
@@ -44,6 +44,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter{
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/jee_project");
 		dataSource.setUsername("root");
+		//dataSource.setPassword("root");
 		
 		return dataSource;
 	}
